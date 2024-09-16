@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
-from secret import SECRET_KEY
+#from secret import token
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-py$67gi^v=3#hn!q-nhss012&#ht((3hj6g5)60q5vc+#ooob+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'example.com', '203.0.113.5']
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'telebot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'user': ' telebot',
+        'db': 'telebase',
+        'PASSWORD' : '123',
+        'localhost' :'5432 :telebot :telebase : 123',
+
     }
 }
 
